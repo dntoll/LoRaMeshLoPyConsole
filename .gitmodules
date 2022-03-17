@@ -1,0 +1,3 @@
+[submodule "LoRaMeshLibrary"]
+	path = LoRaMeshLibrary
+	url = git@github.com:dntoll/LoRaMeshLibrary.git

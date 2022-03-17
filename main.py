@@ -4,11 +4,11 @@ import pycom
 pycom.pybytes_on_boot(False)
 pycom.heartbeat(False)
 
-from meshlibrary.MeshFacade import MeshFacade
+from LoRaMeshLibrary.MeshFacade import MeshFacade
 from MeshTestConsole import MeshTestConsole
 from view.CompositeView import CompositeView
 from view.SerialConsoleView import SerialConsoleView
-from meshlibrary.PycomInterface import PycomInterface
+from LoRaMeshLibrary.PycomInterface import PycomInterface
 
 
 view = CompositeView()

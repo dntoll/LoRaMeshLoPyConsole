@@ -1,8 +1,8 @@
 #from tabnanny import check
 from ansiconsole.Console import Console
 from ansiconsole.ANSIEscape import ANSIEscape
-from meshlibrary.Message import Message
-from meshlibrary.MessageChecksum import MessageChecksum
+from LoRaMeshLibrary.Message import Message
+from LoRaMeshLibrary.MessageChecksum import MessageChecksum
 
 
 class SerialConsoleView:
