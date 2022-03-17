@@ -1,6 +1,6 @@
 #from tabnanny import check
-from ansiconsole.Console import Console
-from ansiconsole.ANSIEscape import ANSIEscape
+from ANSIConsole.Console import Console
+from ANSIConsole.ANSIEscape import ANSIEscape
 from LoRaMeshLibrary.Message import Message
 from LoRaMeshLibrary.MessageChecksum import MessageChecksum
 
