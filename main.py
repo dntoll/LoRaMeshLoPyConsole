@@ -1,4 +1,3 @@
-import ftpdeploy
 import pycom
 
 pycom.pybytes_on_boot(False)
@@ -41,6 +40,6 @@ view.add(SerialConsoleView())
 a = MeshTestConsole(view= view, hardwareInterface = PycomInterface(), meshFacade = MeshFacade(view, MeshTestConsole.callback))
 a.run()
 
-print("Release 5")
+print("Release 6")
 
 
