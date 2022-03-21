@@ -41,6 +41,6 @@ view.add(SerialConsoleView())
 a = MeshTestConsole(view= view, hardwareInterface = PycomInterface(), meshFacade = MeshFacade(view, MeshTestConsole.callback))
 a.run()
 
-print("Release 3")
+print("Release 4")
 
 
