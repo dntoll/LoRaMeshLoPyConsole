@@ -34,6 +34,7 @@ print("Release 6")
 
 
 wlan = WLAN()
+wlan.init()
 wlan.connect(ssid=secrets.ssid, auth=(WLAN.WPA2, secrets.pwa))
 print('connecting..',end='')
 while not wlan.isconnected():

@@ -7,7 +7,7 @@ class HTTPPusher:
     def __init__(self, clientIP):
         self.clientID = clientIP
         try:
-            r = requests.get('http://'+clientIP+'/deploy', timeout=5)
+            r = requests.get('http://'+clientIP+'/deploy', timeout=2)
             print(r.content)
         except:
             print("Exception on client " + clientIP)
