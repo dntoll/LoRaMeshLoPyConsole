@@ -19,10 +19,19 @@ class MeshTestConsole:
         #Want to run the loop in a separate thread to make sure we can interract with the app on this one
         self.hardwareInterface.start_new_thread(MeshTestConsole.mainLoopInThread, (self, self))
 
+        while True:
+            command = input("Input:")
+            if command == "Q":
+                break
+            elif command == "N":
+                print(self.meshFacade.getNeighbors())
+            elif command == "PN":
+                print(self.meshFacade.pingNeighbors())
+
     def mainLoopInThread(this, that):
         while True:
             this.view.update(this.meshFacade) #not superhappy about this instead the facade should offer an interface for this
-            this.hardwareInterface.sleep_ms(1000)
+            this.hardwareInterface.sleep_ms(2000)
             
     
     def n(self):

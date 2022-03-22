@@ -26,7 +26,6 @@ view = CompositeView()
 view.add(SerialConsoleView())
 
 a = MeshTestConsole(view= view, hardwareInterface = PycomInterface(), meshFacade = MeshFacade(view, MeshTestConsole.callback))
-a.run()
 
 print("Release 6")
 
@@ -37,3 +36,5 @@ gd = gitDeploy("dntoll", "LoRaMeshLoPyConsole", filesToKeep, ignoreUpload)
 wlan = wlanhelper()
 ds = DeployServer(gd, wlan, 80)
 print(wlan.ifconfig()[0])
+
+a.run()
