@@ -15,7 +15,7 @@ from network import WLAN
 from MicropythonGitDeploy.gitDeploy import gitDeploy
 from MicropythonGitDeploy.DeployServer import DeployServer
 import time
-
+from MicropythonGitDeploy.wlanhelper import wlanhelper
 
 
 
@@ -30,24 +30,10 @@ a.run()
 
 print("Release 6")
 
-
-
-
-wlan = WLAN()
-wlan.init()
-wlan.connect(ssid=secrets.ssid, auth=(WLAN.WPA2, secrets.pwa))
-print('connecting..',end='')
-while not wlan.isconnected():
-    time.sleep(1)
-    print('.',end='')
-
-print('connected' + str(wlan.ifconfig()[0]))
-
-
+#Git Deploy code
 filesToKeep=["secrets.py"]
 ignoreUpload=[".gitmodules", ".gitignore", 'pymakr.conf', 'LICENSE', "README.md", "OTADeploy.sh", "release_push.py"]
 gd = gitDeploy("dntoll", "LoRaMeshLoPyConsole", filesToKeep, ignoreUpload)
-time.sleep(2)
+wlan = wlanhelper()
 ds = DeployServer(gd, wlan, 80)
-
 print(wlan.ifconfig()[0])
