@@ -18,20 +18,8 @@ import time
 
 
 
-wlan = WLAN()
-wlan.connect(ssid=secrets.ssid, auth=(WLAN.WPA2, secrets.pwa))
-print('connecting..',end='')
-while not wlan.isconnected():
-    time.sleep(1)
-    print('.',end='')
-
-print('connected' + str(wlan.ifconfig()[0]))
 
 
-filesToKeep=["secrets.py"]
-ignoreUpload=[".gitmodules", ".gitignore", 'pymakr.conf', 'LICENSE', "README.md", "OTADeploy.sh"]
-gd = gitDeploy("dntoll", "LoRaMeshLoPyConsole", filesToKeep, ignoreUpload)
-ds = DeployServer(gd, wlan, 80)
 
 view = CompositeView()
 #view.add(RGBView())
@@ -43,3 +31,22 @@ a.run()
 print("Release 6")
 
 
+
+
+wlan = WLAN()
+wlan.connect(ssid=secrets.ssid, auth=(WLAN.WPA2, secrets.pwa))
+print('connecting..',end='')
+while not wlan.isconnected():
+    time.sleep(1)
+    print('.',end='')
+
+print('connected' + str(wlan.ifconfig()[0]))
+
+
+filesToKeep=["secrets.py"]
+ignoreUpload=[".gitmodules", ".gitignore", 'pymakr.conf', 'LICENSE', "README.md", "OTADeploy.sh", "release_push.py"]
+gd = gitDeploy("dntoll", "LoRaMeshLoPyConsole", filesToKeep, ignoreUpload)
+time.sleep(2)
+ds = DeployServer(gd, wlan, 80)
+
+print(wlan.ifconfig()[0])
