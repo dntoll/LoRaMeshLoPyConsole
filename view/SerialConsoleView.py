@@ -77,6 +77,8 @@ class SerialConsoleView:
             return "acc"
         if type == Message.TYPE_FIND:
             return "fin"
+        if type == Message.TYPE_PING:
+            return "pin"
         
         return "mes"
 
